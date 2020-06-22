@@ -28,11 +28,11 @@ export class TodoState {
 
     @Selector()
     static getTodoList(state: TodoStateModel) {
-        return  state.list
+        return state.list
     }
 
     @Selector()
-    static getSummary(state: TodoStateModel){
+    static getSummary(state: TodoStateModel) {
         return state.summary
     }
 
@@ -47,41 +47,41 @@ export class TodoState {
             tap(todo => {
                 const state = getState()
                 const todos = [...state.list]
-                patchState({                
-                   // list: [todo, ...todos],
-                    summary:{                       
+                patchState({
+                    // list: [todo, ...todos],
+                    summary: {
                         totalCount: state.summary?.totalCount + 1,
                         todoCount: state.summary?.todoCount + 1,
-                        completeCount:state.summary?.completeCount
+                        completeCount: state.summary?.completeCount
                     }
                 })
             }
             )
-        ).subscribe(v=>v)
+        ).subscribe(v => v)
 
     }
 
     @Action(UpdateTodo)
     updateTodo({ getState, patchState }: StateContext<TodoStateModel>, { id }: UpdateTodo) {
         this.todoService.finishTodo(id)
-        const new_todos=this.todoService.getAllTodos()
-        const state = getState() 
-        console.log('atction here',state.list.map<TodoItem>((t) =>
-        t.id === id
-            ?
-            { id: t.id, task: t.task, isCompleted: !t.isCompleted }
-            :   
-            t)
-        )              
-       return patchState({           
-            list:new_todos,        
+        const new_todos = this.todoService.getAllTodos()
+        const state = getState()
+        console.log('atction here', state.list.map<TodoItem>((t) =>
+            t.id === id
+                ?
+                { id: t.id, task: t.task, isCompleted: !t.isCompleted }
+                :
+                t)
+        )
+        return patchState({
+            list: new_todos,
             summary: {
                 totalCount: new_todos.length,
-                completeCount:new_todos.filter(t => t.isCompleted)?.length,
+                completeCount: new_todos.filter(t => t.isCompleted)?.length,
                 todoCount: new_todos.filter(t => !t.isCompleted)?.length
             }
         })
-     
+
     }
     @Action(GetTodos)
     getTodos({ setState }: StateContext<TodoStateModel>, action: GetTodos) {

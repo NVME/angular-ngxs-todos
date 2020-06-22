@@ -2,3 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@media (min-width: 320px) {
+    .routlet { width:100%; }
+}
+@media (min-width: 600px) {
+    .routlet { width:60%; }
+}
+
+@media (min-width: 900px) {
+    .routlet { width:40%; }
+}
+
+
