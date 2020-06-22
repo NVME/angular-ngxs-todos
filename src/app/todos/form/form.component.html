@@ -1,10 +1,11 @@
        
         <form action="">
             <mat-form-field style='width: 70%; margin:0 1rem;'>
-                <input  matInput  placeholder="Please add a task here......" required/>              
+                <input  matInput [formControl]="taskInput" 
+                placeholder="Please add a task here......" />              
             </mat-form-field>
             
-            <button mat-raised-button color='primary'>Add</button>
+            <button mat-raised-button (click)="addTodo()" color='primary'>Add</button>
         
         </form>
    

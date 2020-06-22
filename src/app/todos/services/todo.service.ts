@@ -5,11 +5,14 @@ import { TodoItem } from '../model/todo.model';
 
 @Injectable()
 export class TodoService {
-   private todos: Array<TodoItem>= []
+   private todos: Array<TodoItem>=  [
+       { id: 1, task: 'This is my first task', isCompleted: false },
+       { id: 2, task: 'This is my second task', isCompleted: true }
+        ]
    constructor() {}
 
-   getAllTodos():Observable<TodoItem[]>{
-        return of(this.todos)
+   getAllTodos():TodoItem[]{
+        return this.todos
    }
 
    addTodos(task:string):Observable<TodoItem>{
@@ -18,12 +21,12 @@ export class TodoService {
             task,
             isCompleted:false
         }
-        this.todos.push(new_todo)
+        this.todos.push(new_todo)        
         return of(new_todo)
    }
    
-   finishTodo(id:number):Observable<any>{
-       this.todos=this.todos.map(t=>t.id===id?{...t, isCompleted:!t.isCompleted}:t)
-       return of(true)
+   finishTodo(id:number):void{
+       this.todos=this.todos.map(t=>t.id===id?{...t, isCompleted:!t.isCompleted}:t)      
+     
    }
 }

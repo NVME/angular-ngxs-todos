@@ -3,7 +3,7 @@ export class AddTodo{
     constructor(public task:string){}
 }
 
-export class FinishTodo{
+export class UpdateTodo{
     static readonly type='[Todo] Finish'
     constructor(public id:number){}
 }

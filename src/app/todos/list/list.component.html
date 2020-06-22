@@ -5,12 +5,14 @@
         <app-todo-form></app-todo-form>      
         <mat-selection-list >
             <mat-list-option *ngFor="let item of todos$ | async" 
-            checkboxPosition="before" [selected]="item.isCompleted">               
+            [value]="item.id"
+            (click) ="updateTodo(item.id)"
+            checkboxPosition="before" [selected]="item.isCompleted">                         
             <span> {{item.task}}</span>
             </mat-list-option>
         </mat-selection-list>
     </mat-card-content>
     <mat-card-footer  style="margin:0 1rem;">
-        <app-summary total='2' todo='1' completed= '1'></app-summary>
+        <app-summary></app-summary>
     </mat-card-footer>
 </mat-card>

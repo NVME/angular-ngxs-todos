@@ -6,6 +6,7 @@ import { SummaryComponent } from './summary/summary.component';
 import { TodoService } from './services/todo.service';
 import { MaterialModule } from '../app.material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
   imports: [
     CommonModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers:[
     TodoService
