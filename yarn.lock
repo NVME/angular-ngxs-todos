@@ -117,10 +117,17 @@
     ora "4.0.3"
     rxjs "6.5.4"
 
-"@angular/animations@~9.1.11":
-  version "9.1.11"
-  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-9.1.11.tgz#2c7b6e584df0ba0884d05f01fa7ab86c1fdd1c5e"
-  integrity sha512-VKAExUnEJfo1PDQKagpx2pn+QMZCsPLRiADzTdl4U0VPylK3ALbn4ZNY9UbdwyE2plitz++LkH7sEGGfh+PNrQ==
+"@angular/animations@^9.1.11":
+  version "9.1.13"
+  resolved "https://registry.yarnpkg.com/@angular/animations/-/animations-9.1.13.tgz#561305f7bf4a7a5ea3ff172d6fac31615667acb0"
+  integrity sha512-ane1eeQmsP7fcAiLgRhle7YIDgE88WDMMvzqJYhSxwLzXNF/hwqNeskmNcjo8bLt9h/yTIjrCQbycLCHJfU8UQ==
+
+"@angular/cdk@^9.2.4":
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-9.2.4.tgz#8413958bd275e4c34be3b96f56444671dd30ba93"
+  integrity sha512-iw2+qHMXHYVC6K/fttHeNHIieSKiTEodVutZoOEcBu9rmRTGbLB26V/CRsfIRmA1RBk+uFYWc6UQZnMC3RdnJQ==
+  optionalDependencies:
+    parse5 "^5.0.0"
 
 "@angular/cli@~9.1.9":
   version "9.1.9"
@@ -181,10 +188,20 @@
   resolved "https://registry.yarnpkg.com/@angular/core/-/core-9.1.11.tgz#7a92d27292212ed381be15f9000d4019867f1c7c"
   integrity sha512-KAlEedBo761O1aeoTJVziOSHi8Fttk9ipvbDZXYT/o0W/KdVwubxP34g9t5aD8LCcF8+L0z4VLw++HjdJAUpwg==
 
+"@angular/flex-layout@^9.0.0-beta.31":
+  version "9.0.0-beta.31"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-9.0.0-beta.31.tgz#9c0672acafa87de4759f7d0a9aab004e7da105d2"
+  integrity sha512-g94u2mecDl87ORvFRuOBshV/S/ETE4bybClU2e1xXKWNG+rhRHchChneHSonc29ZLyROTjHhmAtKOYojL92uLA==
+
 "@angular/forms@~9.1.11":
   version "9.1.11"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-9.1.11.tgz#fa246144649236613598a0471aa7f39b60f986b5"
   integrity sha512-t4WHrh6ot1r8zdV+3fJz7g9rCok77c9CiIevhH2dR/idxD+HtFR0wqmcBQzsn+rNVB0f0TiSHDrj+TeELIFyWw==
+
+"@angular/material@^9.2.4":
+  version "9.2.4"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-9.2.4.tgz#2666ef606fbb88d60f8e2f18c5e4f94a3dd572d8"
+  integrity sha512-LkoTXE6B0slvMhvfZDdPWaz4yaYLkaAp5VSPunI9pxGsPxzqEV9e210wC1/sjG/76Nk8Ep7/2z9XKac8Q9bMwA==
 
 "@angular/platform-browser-dynamic@~9.1.11":
   version "9.1.11"
@@ -1009,6 +1026,20 @@
     rxjs "6.5.4"
     webpack-sources "1.4.3"
 
+"@ngxs/devtools-plugin@^3.6.2":
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/@ngxs/devtools-plugin/-/devtools-plugin-3.7.3.tgz#0f8724ae15aabea4170b00edd632c594de16bd65"
+  integrity sha512-zkF2OyZKyXW8s/+WZZJgLbWpEguoDAA+EG9qWa/jlysRicYGDVCNZyoxZre4V9BkjwHvY+dQzcDHX4/Ng+Rf5w==
+  dependencies:
+    tslib "^1.9.0"
+
+"@ngxs/logger-plugin@^3.6.2":
+  version "3.7.3"
+  resolved "https://registry.yarnpkg.com/@ngxs/logger-plugin/-/logger-plugin-3.7.3.tgz#aa76f6243a351a83056d234028b5aec84bd559ae"
+  integrity sha512-jLNwq5hJw7W0nS7J215L1k+94jOaiI2kH41sOaN64ycuUx15FiMNJgOIj2ZqSTIaxNlacPWzcG3tZGr/FZ5Lzg==
+  dependencies:
+    tslib "^1.9.0"
+
 "@ngxs/store@^3.6.2":
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/@ngxs/store/-/store-3.6.2.tgz#cfba63dc1e5bd422e89e54b3332cd69818510624"
@@ -1619,9 +1650,9 @@ async-limiter@~1.0.0:
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
 
 async@^2.5.0, async@^2.6.2:
-  version "2.6.3"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
-  integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/async/-/async-2.6.4.tgz#706b7ff6084664cd7eae713f6f965433b5504221"
+  integrity sha512-mzo5dfJYwAn29PeiJ0zvwTo04zj8HDJj0Mn8TD7sno7q12prdbnasKJHhkm2c1LgrhlJ0teaea8860oxi51mGA==
   dependencies:
     lodash "^4.17.14"
 
@@ -5093,9 +5124,9 @@ lodash.uniq@^4.5.0:
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
 lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 log-symbols@^3.0.0:
   version "3.0.0"
@@ -6036,6 +6067,11 @@ parse5@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
   integrity sha512-VrZ7eOd3T1Fk4XWNXMgiGBK/z0MG48BWG2uQNU4I72fkQuKUTZpl+u9k+CxEG0twMVzSmXEEz12z5Fnw1jIQFA==
+
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
 
 parseqs@0.0.5:
   version "0.0.5"
